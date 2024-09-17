@@ -33,15 +33,22 @@
   <p> 13. Пример контекстной ссылки в тексте абзаца: <a href="https://www.google.com">Это ссылка на внешний сайт</a>. </p>
 
   <p> 14. Ссылка на фрагмент страницы стороннего сайта: <a href="https://www.youtube.com#fragment">Ссылка на фрагмент</a></p>
+
+  <img src="https://masterpiecer-images.s3.yandex.net/a73b12916cf411ee8e7f3a7ca4cc1bdc:upscaled" alt="Пример изображения" usemap="#image-map">
   <p> 15. Пример прямоугольной и круглой области</p>
-  <img src="https://masterpiecer-images.s3.yandex.net/a73b12916cf411ee8e7f3a7ca4cc1bdc:upscaled" alt="Пример изображения" usemap="#image-map2">
-  <img scr = "https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg" usemap = "#image-map">
-  <map name="image-map">
-    <area shape="circle" coords="150,150,50" href="https://www.vk.com" alt="Круглая область">
-  </map>
-  <map name="image-map2">
-    <area shape="rect" coords="0,0,100,100" href="https://www.yandex.ru" alt="Прямоугольная область">
-  </map>
+  <img src="https://i.pinimg.com/originals/4c/c1/9c/4cc19c17c52eb4be355ade90762e53b6.jpg" width = 400 usemap="#image" alt="Прямоугольное изображение">
+   
+    <map name="image">
+        <area shape="rect" coords="0,0,400,400" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%BA%D1%83%D0%BB%D0%B0" alt="Перейти на сайт">
+    </map>
+    
+ <h3>Круглая область</h3>
+    
+    <img src="https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg"  width = 100 usemap="#image1" alt="Круглое изображение">
+
+    <map name="image1">
+        <area shape="circle" coords="100,100,100" href="https://example.com" alt="Перейти на сайт">
+    </map>
 
   <ol start = "16">
     <li>Ссылка с пустым href: <a href=""></a></li>
