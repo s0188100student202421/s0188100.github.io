@@ -1,10 +1,7 @@
-/* style.css */
-
 body {
   font-family: sans-serif;
   margin: 0;
   background-color: #f4f4f4;
-  border: 5px solid black; /* Добавляем рамку 5 пикселей черного цвета */
 }
 
 .container {
@@ -12,10 +9,12 @@ body {
   margin: 0 auto; /* Выравнивание по центру */
   padding: 20px;
   display: flex; /* Включаем Flexbox */
-  flex-direction: column; /* Размещаем элементы по вертикали */
 }
-
+.content {
+    widht: 100%;
+}
 header, footer {
+  width: 100%;
   background-color: #333;
   color: #fff;
   padding: 20px;
@@ -26,13 +25,18 @@ nav {
   background-color: #f0f0f0;
   padding: 10px;
   text-align: center;
-  margin-top: 10px; /* Добавляем отступ 10 пикселей вниз */
-  max-width: 960px;
+  margin-top:10 px; /* Добавляем отступ 10 пикселей вниз */
   margin: 0 auto;
   display: flex; /* Включаем Flexbox */
   justify-content: space-between; /* Размещаем элементы по краям */
 }
-
+#nav-right > div
+{
+    margin: 8px 0;
+    width: fit-content;
+    padding: 4px 2px;
+    margin-left: 10px;
+}
 nav ul {
   list-style: none;
   padding: 0;
@@ -118,10 +122,16 @@ nav a {
   order: 2; /* Отобразить список ниже таблицы */
 }
 
-@media (min-width: 768px) {
+@media screen and (orientation: landscape) {
   .container {
     flex-direction: row; /* Размещаем элементы по горизонтали */
   }
+  .flex
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+   }
 
   nav {
     flex-direction: row;
@@ -157,7 +167,14 @@ nav a {
   margin-top: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+   .content {
+    flex-wrap: wrap;
+   }
+   .content nav {
+     margin-top: 100px;
+    width: 100%;
+  }
   .links-list {
     margin-top: 0;
     order: 1;
