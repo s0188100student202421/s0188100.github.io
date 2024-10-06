@@ -1,0 +1,173 @@
+
+/* style.css */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  border: 5px solid black; /* Добавляем рамку 5 пикселей черного цвета */
+}
+
+.container {
+  max-width: 960px; /* Устанавливаем максимальную ширину 960px */
+  margin: 0 auto; /* Выравнивание по центру */
+  padding: 20px;
+  display: flex; /* Включаем Flexbox */
+  flex-direction: column; /* Размещаем элементы по вертикали */
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px; /* Добавляем отступ 10 пикселей вниз */
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex; /* Включаем Flexbox */
+  justify-content: space-between; /* Размещаем элементы по краям */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Включаем Flexbox */
+  flex-direction: column; /* Размещаем элементы по вертикали */
+}
+
+nav li {
+  margin-bottom: 5px; /* Добавляем отступ между элементами */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+#links-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#links-table th, #links-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#links-table th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+#links-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#links-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+#logo {
+  border-radius: 20px; /* Делаем логотип круглым с радиусом 20px */
+  float: left;
+  width: 50px; /* Уменьшаем ширину логотипа */
+  height: 50px; /* Уменьшаем высоту логотипа */
+  margin-top: -30px; /* Смещаем логотип на 30px вверх */
+}
+
+.nav-right {
+  float: right;
+  position: relative;
+  top: -50px; /* Adjust as needed for desired vertical positioning */
+}
+
+#empty-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#empty-table th, #empty-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#empty-table th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+#empty-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#empty-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  order: 2; /* Отобразить список ниже таблицы */
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Размещаем элементы по горизонтали */
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .container > * {
+    flex: 1; /* Равномерное распределение пространства */
+  }
+
+  .links-list {
+    order: 1; /* Отобразить список выше таблицы */
+    flex-direction: row; /* Размещаем элементы по горизонтали */
+    flex-wrap: wrap;
+  }
+
+  .nav-right {
+    top: 0; /* Remove top offset for larger screens */
+    float: right; /* Use float for consistent right alignment */
+  }
+
+  nav ul {
+    flex-direction: row; /* Размещаем элементы по горизонтали */
+  }
+
+  nav li {
+    margin-bottom: 0; /* Убираем отступ между элементами */
+    margin-right: 5px; /* Добавляем отступ в 5px между элементами в горизонтальном списке */
+  }
+}
+
+.links-list {
+  margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+   .content {
+    flex-wrap: wrap;
+   }
+   .content nav {
+     margin-top: 100px;
+    width: 100%;
+  }
+  .links-list {
+    margin-top: 0;
+    order: 1;
+  }
+}
