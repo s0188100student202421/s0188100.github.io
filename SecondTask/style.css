@@ -1,12 +1,19 @@
-
+/* style.css */
 
 body {
+  justify-content: center;
   font-family: sans-serif;
   margin: 0;
   background-color: #f4f4f4;
 
 }
-
+#main{
+  background-color:#f9f9f9;;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-right:20%;
+  margin-left:20%;
+}
 .container {
   margin: 0 auto;
   text-align: left;
