@@ -6,11 +6,10 @@ body {
   background-color: #f4f4f4;
 
 }
-
 .container {
   margin: 0 auto;
-  padding: 20px;
   text-align: left;
+  padding: 20px;
 }
 footer{
   text-align:left;
