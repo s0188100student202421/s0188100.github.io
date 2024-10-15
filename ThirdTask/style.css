@@ -1,26 +1,17 @@
-
-/* style.css */
-
-
 body {
-  justify-content: center;
   font-family: sans-serif;
   margin: 0;
   background-color: #f4f4f4;
+  border: 5px solid black; /* Добавляем рамку 5 пикселей черного цвета */
+}
 
-}
-#main{
-  background-color:#f9f9f9;;
-  margin-top: 20px;
-  margin-bottom: 100px;
-  margin-right:20%;
-  margin-left:20%;
-}
 .container {
-  margin: 0 auto;
-  text-align: left;
+  margin: 0 auto; /* Выравнивание по центру */
   padding: 20px;
+  display: flex; /* Включаем Flexbox */
+  flex-direction: column; /* Размещаем элементы по вертикали */
 }
+
 footer{
   text-align:left;
   position: relative;
@@ -131,6 +122,13 @@ nav a {
 }
 
 @media (min-width: 768px) {
+    #main{
+          background-color:#f9f9f9;;
+          margin-top: 20px;
+          margin-bottom: 100px;
+          margin-right:20%;
+          margin-left:20%;
+        }
   .container {
     flex-direction: row; /* Размещаем элементы по горизонтали */
   }
