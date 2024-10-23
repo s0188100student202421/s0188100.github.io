@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Ссылки</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ссылки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="header">
-    <div class="content">
-          <img id="logo" src="https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg" alt="Логотип сайта">
-	  <div class="flex">
-            <nav class="nav-right">
-              <ul>
-                <li><a href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 1</a></li>
-                <li><a href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 2</a></li>
-                <li><a href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 3</a></li>
-              </ul>
-            </nav>
-	    </div>
-            <div class="syte">
-                <p> Название сайта </p>
+    <header>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <img id="logo" src="https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg" alt="Логотип сайта">
+                <div class="syte">
+                    <p> Название сайта </p>
+                </div>
+                <nav id="nav-right" class="nav nav-pills d-none d-md-flex">
+                    <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 1</a>
+                    <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%BE)">Ссылка меню 2</a>
+                    <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 3</a>
+                </nav>
             </div>
         </div>
     </header>
-<h2>Таблица</h2>
 
-      <table id="empty-table">
+    <nav id="nav-right-mobile" class="nav nav-pills flex-column justify-content-center d-md-none" style="background-color: #007bff;">
+        <div class="container">
+            <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 1</a>
+            <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 2</a>
+            <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 3</a>
+        </div>
+    </nav>
+
+    <main id="main" class="container">
+        <div class="table-container d-md-none">
+            <table id="empty-table">
+                <h2>Таблица</h2>
         <thead>
           <tr>
             <th>Заголовок 1</th>
@@ -44,9 +53,14 @@
           </tr>
           <tr>
             <td></td>
+            <td colspan = "2">Объединенный столбец</td>
+            <td></td>
+          </tr>
+          <tr>
             <td></td>
             <td></td>
             <td></td>
+            <td></td> 
           </tr>
           <tr>
             <td></td>
@@ -56,13 +70,7 @@
           </tr>
           <tr>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
+            <td rowspan = "2">Объединая строка</td>
             <td></td>
             <td></td>
           </tr>
@@ -70,114 +78,152 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+            
           </tr>
         </tbody>
-      </table>
+            </table>
+        </div>
 
-  <h1>Список гиперссылок</h1>
+        <div id="links">
+            <h1>Список гиперссылок</h1>
+            <ol>
+                <li>Абсолютная ссылка на главную страницу сайта kubsu.ru: <a href="http://kubsu.ru">http://kubsu.ru</a></li>
+                <li>Абсолютная ссылка на главную страницу сайта kubsu.ru в протоколе https: <a href="https://kubsu.ru">https://kubsu.ru</a></li>
+                <li>Ссылка-изображение: <a href="https://masterpiecer-images.s3.yandex.net/5fd531dca6427c7:upscaled"><img src="https://masterpiecer-images.s3.yandex.net/5fd531dca6427c7:upscaled" width="300" alt="Пример изображения"></a></li>
+                <li>Сокращенная ссылка на внутреннюю страницу: <a href="./index2.html">Внутренняя страница</a></li>
+            </ol>
+            <h2 id="внутренняя_страница">Внутренняя главная страница</h2>
+            <p>Это внутренняя страница.</p>
+            <ol start="5">
+                <li>Сокращенная ссылка на главную страницу: <a href="./index.html">Главная страница</a></li>
+                <li>Ссылка на фрагмент текущей страницы: <a href="#внутренняя_страница">Внутренняя страница</a></li>
+                <li>Ссылка с тремя параметрами в URL: <a href="?param1=value1&param2=value2&param3=value3">Ссылка с параметрами</a></li>
+                <li>Ссылка с параметром id в URL: <a href="?id=123">Ссылка с id</a></li>
+                <li>Относительная ссылка на страницу в текущем каталоге: <a href="index.html">Текущий каталог</a></li>
+                <li>Относительная ссылка на страницу в каталоге about: <a href="about/index.html">Каталог about</a></li>
+                <li>Относительная ссылка на страницу в каталоге уровнем выше текущего: <a href="../index.html">Каталог выше</a></li>
+                <li>Относительная ссылка на страницу в каталоге двумя уровнями выше: <a href="../../index.html">Каталог двумя уровнями выше</a></li>
+            </ol>
+            <p> 13. Пример контекстной ссылки в тексте абзаца: <a href="https://www.google.com">Это ссылка на внешний сайт</a>.</p>
+            <p> 14. Ссылка на фрагмент страницы стороннего сайта: <a href="https://www.youtube.com#fragment">Ссылка на фрагмент</a></p>
+            <p> 15. Пример прямоугольной и круглой области</p>
+            <img src="https://masterpiecer-images.s3.yandex.net/a73b12916cf411ee8e7f3a7ca4cc1bdc:upscaled" width="400" usemap="#image" alt="Прямоугольное изображение">
+            <map name="image">
+                <area shape="rect" coords="0,0,400,400" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%BA%D1%83%D0%BB%D0%B0" alt="Перейти на сайт">
+            </map>
+            <h3>Круглая область</h3>
+            <img src="https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg" width="100" height="100" usemap="#circle" alt="Круглое изображение">
+            <map name="circle">
+                <area shape="circle" coords="50,50,50" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%BA%D1%83%D0%BB%D0%B0" alt="Перейти на сайт">
+            </map>
+            <p> 16. Пример ссылки с использованием метода GET: <a href="https://www.google.com/search?q=популярные+языки+программирования" target="_blank">Ссылка в новой вкладке</a></p>
+            <p> 17. Ссылка с title: <a href="https://www.youtube.com" title="Описание ссылки">Ссылка с описанием</a></p>
+        </div>
 
-  <ol>
-    <li>Абсолютная ссылка на главную страницу сайта kubsu.ru: <a href="http://kubsu.ru">http://kubsu.ru</a></li>
-    <li>Абсолютная ссылка на главную страницу сайта kubsu.ru в протоколе https: <a href="https://kubsu.ru">https://kubsu.ru</a></li>
-    <li>Ссылка-изображение: <a href="https://masterpiecer-images.s3.yandex.net/5fd531dca6427c7:upscaled"><img src="https://masterpiecer-images.s3.yandex.net/5fd531dca6427c7:upscaled" width="300" alt="Пример изображения"></a></li>
-    <li>Сокращенная ссылка на внутреннюю страницу: <a href="./index2.html">Внутренняя страница</a></li>
-  </ol>
+        <div class="table-container d-none d-md-block">
+            <table id="empty-table">
+                <thead>
+                    <tr>
+                        <th>Заголовок 1</th>
+                        <th>Заголовок 2</th>
+                        <th>Заголовок 3</th>
+                        <th>Заголовок 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td rowspan="2">Объединенная строка</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-  <h2 id="внутренняя_страница">Внутренняя главная страница</h2>
-  <p>Это внутренняя страница.</p>
+        <form id="forma">
+            <h2>Форма</h2>
+            <div class="form-group">
+                <label for="fio">ФИО:</label>
+                <input type="text" id="fio" name="fio" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="birthday">Дата рождения:</label>
+                <input type="date" id="birthday" name="birthday" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="gender">Пол:</label><br>
+                <div class="form-check">
+                    <input type="radio" id="male" name="gender" value="male" class="form-check-input">
+                    <label for="male" class="form-check-label">Мужской</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="female" name="gender" value="female" class="form-check-input">
+                    <label for="female" class="form-check-label">Женский</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="languages">Любимый язык программирования:</label>
+                <select id="languages" name="languages" class="form-control" multiple>
+                    <option value="Pascal">Pascal</option>
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="Haskel">Haskel</option>
+                    <option value="Clojure">Clojure</option>
+                    <option value="Prolog">Prolog</option>
+                    <option value="Scala">Scala</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="biography">Биография:</label>
+                <textarea id="biography" name="biography" class="form-control"></textarea>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="agreement" name="agreement" class="form-check-input">
+                <label for="agreement" class="form-check-label">С контрактом ознакомлен(а)</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </main>
 
-  <ol start = "5">
-    <li>Сокращенная ссылка на главную страницу: <a href="./index.html">Главная страница</a></li>
-    <li>Ссылка на фрагмент текущей страницы: <a href="#внутренняя_страница">Внутренняя страница</a></li>
-    <li>Ссылка с тремя параметрами в URL: <a href="?param1=value1&param2=value2&param3=value3">Ссылка с параметрами</a></li>
-    <li>Ссылка с параметром id в URL: <a href="?id=123">Ссылка с id</a></li>
-    <li>Относительная ссылка на страницу в текущем каталоге: <a href="index.html">Текущий каталог</a></li>
-    <li>Относительная ссылка на страницу в каталоге about: <a href="about/index.html">Каталог about</a></li>
-    <li>Относительная ссылка на страницу в каталоге уровнем выше текущего: <a href = "../index.html">Каталог выше</a></li>
-    <li>Относительная ссылка на страницу в каталоге двумя уровнями выше: <a href="../../index.html">Каталог двумя уровнями выше</a></li>
-  </ol>
+    <footer>
+        <div class="container">
+            <p>&copy; s0188100 Масляева Юлия</p>
+        </div>
+    </footer>
 
-  <p> 13. Пример контекстной ссылки в тексте абзаца: <a href="https://www.google.com">Это ссылка на внешний сайт</a>. </p>
-
-  <p> 14. Ссылка на фрагмент страницы стороннего сайта: <a href="https://www.youtube.com#fragment">Ссылка на фрагмент</a></p>
-
-  <p> 15. Пример прямоугольной и круглой области</p>
-  <img src="https://masterpiecer-images.s3.yandex.net/a73b12916cf411ee8e7f3a7ca4cc1bdc:upscaled" width = 400 usemap="#image" alt="Прямоугольное изображение">
-   
-    <map name="image">
-        <area shape="rect" coords="0,0,400,400" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%BA%D1%83%D0%BB%D0%B0" alt="Перейти на сайт">
-    </map>
-
- <h3>Круглая область</h3>
-
-    <img src="https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg"  width = 100 usemap="#image1" alt="Круглое изображение">
-
-    <map name="image1">
-        <area shape="circle" coords="100,100,100" href="https://example.com" alt="Перейти на сайт">
-    </map>
-
-  <ol start = "16">
-    <li>Ссылка с пустым href: <a href=""></a></li>
-    <li>Ссылка без href: <a>Ссылка без href</a></li>
-    <li>Ссылка, по которой запрещен переход поисковикам: <a href="https://www.google.com" rel="nofollow">Запрещенная ссылка</a></li>
-    <li>Запрещенная для индексации поисковиками: <meta name="robots" content="noindex, nofollow"> </li>
-  </ol>
-  <p>20. Нумерованный список ссылок с подписями title</p>
-  <ol>
-    <li>Ссылка с title: <a href="https://www.google.com" title="Описание ссылки">Ссылка с описанием</a></li>
-    <li>Ссылка с title: <a href="https://www.yandex.ru" title="Описание ссылки">Ссылка с описанием</a></li>
-  </ol>
-    <p> 21. Ссылка на файл на сервере FTP с авторизацией: <a href="ftp://user:password@ftp.server.com/file.txt">Файл на FTP</a></p>
-      <h2>Форма</h2>
-  <form>
-    <label for="fio">ФИО:</label><br>
-    <input type="text" id="fio" name="fio"><br><br>
-
-    <label for="phone">Телефон:</label><br>
-    <input type="tel" id="phone" name="phone"><br><br>
-
-    <label for="email">E-mail:</label><br>
-    <input type="email" id="email" name="email"><br><br>
-
-    <label for="birthday">Дата рождения:</label><br>
-    <input type="date" id="birthday" name="birthday"><br><br>
-
-    <label for="gender">Пол:</label><br>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Мужской</label><br>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Женский</label><br><br>
-
-    <label for="languages">Любимый язык программирования:</label><br>
-    <select id="languages" name="languages" multiple>
-      <option value="Pascal">Pascal</option>
-      <option value="C">C</option>
-      <option value="C++">C++</option>
-      <option value="JavaScript">JavaScript</option>
-      <option value="PHP">PHP</option>
-      <option value="Python">Python</option>
-      <option value="Java">Java</option>
-      <option value="Haskel">Haskel</option>
-      <option value="Clojure">Clojure</option>
-      <option value="Prolog">Prolog</option>
-      <option value="Scala">Scala</option>
-    </select><br><br>
-
-    <label for="biography">Биография:</label><br>
-    <textarea id="biography" name="biography"></textarea><br><br>
-
-    <input type="checkbox" id="agreement" name="agreement">
-    <label for="agreement">С контрактом ознакомлен(а)</label><br><br>
-
-    <input type="submit" value="Сохранить">
-  </form>
-<footer>
-    <div class="container">
-      <p>s&copy; s0188100 Масляева Юлия</p>
-    </div>
-  </footer>
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
