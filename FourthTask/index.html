@@ -1,91 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ссылки</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Название сайта</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
+<style>
+    #header, #footer {
+  background-color: #666;
+    color: #fff;
+    }
+    #table {
+      border: solid black;
+    }
+    .space {
+      background-color: white;
+      height: 15px;
+    }
+</style>
 <body>
-    <header>
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <img id="logo" src="https://i.pinimg.com/736x/ba/09/9d/ba099dee6b946b78d082de0822c6b610.jpg" alt="Логотип сайта">
-                <div class="syte">
-                    <p> Название сайта </p>
-                </div>
-                <nav id="nav-right" class="nav nav-pills d-none d-md-flex">
-                    <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 1</a>
-                    <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%BE)">Ссылка меню 2</a>
-                    <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 3</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <nav id="nav-right-mobile" class="nav nav-pills flex-column justify-content-center d-md-none" style="background-color: #007bff;">
-        <div class="container">
-            <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/1_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 1</a>
-            <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/2_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 2</a>
-            <a class="nav-link text-white" href="https://ru.wikipedia.org/wiki/3_(%D1%87%D0%B8%D1%81%D0%BB%D0%BE)">Ссылка меню 3</a>
-        </div>
-    </nav>
-
-    <main id="main" class="container">
-        <div class="table-container d-md-none">
-            <table id="empty-table">
-                <h2>Таблица</h2>
-        <thead>
-          <tr>
-            <th>Заголовок 1</th>
-            <th>Заголовок 2</th>
-            <th>Заголовок 3</th>
-            <th>Заголовок 4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td colspan = "2">Объединенный столбец</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td> 
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td rowspan = "2">Объединая строка</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            
-          </tr>
-        </tbody>
-            </table>
-        </div>
-
-        <div id="links">
-            <h1>Список гиперссылок</h1>
+  <header id="header" class="container-fluid">
+    <div class="row">
+      <div class="col-6 col-md-4 py-1">
+        <a href="#" title="Главная страница">
+          <img src="https://www.vecteezy.com/png/27295106-somali-cat-png-transparent-background-ai-generative" width="10%" 
+          alt="Логотип сайта" class="logo">
+        </a>
+      </div>  
+      <div class="col-6 col-md-4 text-center align-self-center">
+        <h2 class="namehead">Задание 4</h2>
+      </div>
+      <div class="col-12 order-2 col-md-4 navigator">
+        <nav class="navi navbar navbar-expand-md navbar-light text-md-center">
+          <div class="navbar">
+            <ul class="navbar-nav flex-column flex-md-row">
+              <li class="nav-item"><a class="nav-link" href="#">Меню</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://github.com/svirekat">GitHub</a></li>
+              <li class="nav-item"><a class="nav-link" href="#footer">Информация</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="space col-12 order-md-last order-1"></div>
+    </div>   
+  </header>
+    
+  </div>
+<main id="main" class="container d-flex flex-column">
+  <div class="row py-3 order-md-1 order-2">
+    <div class="col-12 border border-lg border-primary rounded">
+      <div>
+        <ul id="list">
+          <h1>Список гиперссылок</h1>
             <ol>
                 <li>Абсолютная ссылка на главную страницу сайта kubsu.ru: <a href="http://kubsu.ru">http://kubsu.ru</a></li>
                 <li>Абсолютная ссылка на главную страницу сайта kubsu.ru в протоколе https: <a href="https://kubsu.ru">https://kubsu.ru</a></li>
@@ -120,110 +87,130 @@
             <p> 17. Ссылка с title: <a href="https://www.youtube.com" title="Описание ссылки">Ссылка с описанием</a></p>
         </div>
 
-        <div class="table-container d-none d-md-block">
-            <table id="empty-table">
-                <thead>
-                    <tr>
-                        <th>Заголовок 1</th>
-                        <th>Заголовок 2</th>
-                        <th>Заголовок 3</th>
-                        <th>Заголовок 4</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td rowspan="2">Объединенная строка</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <form id="forma">
-            <h2>Форма</h2>
-            <div class="form-group">
-                <label for="fio">ФИО:</label>
-                <input type="text" id="fio" name="fio" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="birthday">Дата рождения:</label>
-                <input type="date" id="birthday" name="birthday" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="gender">Пол:</label><br>
-                <div class="form-check">
-                    <input type="radio" id="male" name="gender" value="male" class="form-check-input">
-                    <label for="male" class="form-check-label">Мужской</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="female" name="gender" value="female" class="form-check-input">
-                    <label for="female" class="form-check-label">Женский</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="languages">Любимый язык программирования:</label>
-                <select id="languages" name="languages" class="form-control" multiple>
-                    <option value="Pascal">Pascal</option>
-                    <option value="C">C</option>
-                    <option value="C++">C++</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="PHP">PHP</option>
-                    <option value="Python">Python</option>
-                    <option value="Java">Java</option>
-                    <option value="Haskel">Haskel</option>
-                    <option value="Clojure">Clojure</option>
-                    <option value="Prolog">Prolog</option>
-                    <option value="Scala">Scala</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="biography">Биография:</label>
-                <textarea id="biography" name="biography" class="form-control"></textarea>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" id="agreement" name="agreement" class="form-check-input">
-                <label for="agreement" class="form-check-label">С контрактом ознакомлен(а)</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>  
+  <div class="row py-3 order-md-2 order-1">
+    <div class="col-12 border border-lg border-primary rounded">
+      <div class="table-responsive">
+        <h3>Таблица</h3>
+        <table id="table" class="table table-striped table-bordered table-hover">
+          <thead class="text-center">
+            <tr id="tr-chet">
+            <th>Колонка 1</th>
+            <th>Колонка 2</th>
+            <th>Колонка 3</th>
+            <th>Колонка 4</th></tr>
+          </thead>
+          <tbody class="text-center">
+            <tr id="tr-nechet">
+              <td>Ячейка 11</td>
+              <td>Ячейка 12</td>
+              <td colspan="2">Ячейка 13 объединённая с 14</td>
+            </tr>
+            <tr id="tr-chet">
+              <td>Ячейка 21</td>
+              <td>Ячейка 22</td>
+              <td>Ячейка 23</td>
+              <td>Ячейка 24</td>
+            </tr>
+            <tr id="tr-nechet">
+              <td>Ячейка 31</td>
+              <td colspan="2">Ячейка 32 объединённая с 33</td>
+              <td>Ячейка 34</td>
+            </tr>
+            <tr id="tr-chet">
+              <td>Ячейка 41</td>
+              <td>Ячейка 42</td>
+              <td>Ячейка 43</td>
+              <td>Ячейка 44</td>
+            </tr>
+            <tr id="tr-nechet">
+              <td colspan="2">Ячейка 51 объединённая с 52</td>
+              <td>Ячейка 53</td>
+              <td>Ячейка 54</td>
+            </tr>
+            <tr id="tr-chet">
+              <td>Ячейка 61</td>
+              <td>Ячейка 62</td>
+              <td colspan="2">Ячейка 63 объединённая с ячейкой 64</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><a href="#header" id="lnk" class="btn btn-primary py-3">Вернуться в начало страницы</a></li></p>
+    </div>
+  </div>
+</div>
+<div class="row py-3 order-last">
+  <div class="col-12 border border-lg border-primary rounded">
+    <div>
+      <h2>Форма HTML</h2>
+        <form id="form" action="/"
+          method="POST">
+          <label>
+            ФИО:<br />
+            <input name="field-name-1" type="text" placeholder="Введите ФИО" />
+          </label><br><br>
+          <label>
+            Номер телефона:<br />
+            <input name="field-number" type="tel" placeholder="Введите номер телефона" />
+          </label><br><br>
+          <label>
+            e-mail:<br />
+            <input name="field-email" type="e-mail" placeholder="Введите e-mail" />
+          </label><br><br>
+          <label>
+            Дата рождения:<br>
+            <input name="field-date" type="date" />
+          </label><br><br>
+          Пол:<br />
+          <label><input type="radio" checked="checked"
+            name="radio-group-1" /> Женский
+          </label>
+          <label><input type="radio"
+            name="radio-group-1" /> Мужской
+          </label><br><br>
+          <label>
+            Любимый язык программирования:<br>
+            <select name="field-name-2[]"
+              multiple="multiple" size="5">
+              <option value="Значение1" selected="selected">Pascal</option>
+              <option value="Значение2">C</option>
+              <option value="Значение3" >C++</option>
+              <option value="Значение4" >JavaScript</option>
+              <option value="Значение5" >PHP</option>
+              <option value="Значение6" >Python</option>
+              <option value="Значение7" >Java</option>
+              <option value="Значение8" >Haskel</option>
+              <option value="Значение9" >Clojure</option>
+              <option value="Значение10" >Prolog</option>
+              <option value="Значение11" >Scala</option>
+            </select>
+          </label><br /><br>
+          <label>
+            Биография:<br />
+            <textarea name="field-name-3"></textarea>
+          </label><br><br>
+          <label>
+          <input type="checkbox" checked="checked"
+          name="check-1" />
+          С контрактом ознакомлен(а)</label><br><br>
+          <input type="submit" value="Отправить" />
         </form>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; s0188100 Масляева Юлия</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <p><a href="#header" id="lnk" class="btn btn-primary mt-3 py-3">Вернуться в начало страницы</a></li></p>
+      </div>
+    </div>
+  </div>
+</main>
+  <footer id="footer" class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <p>&copy;Масляева Юлия</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-

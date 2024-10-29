@@ -1,67 +1,11 @@
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            border: 5px solid black;
-        }
-
-        #main {
-            background-color: #f9f9f9;
-            margin: 20px 3%;
-        }
-
-        header, footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-        }
-        footer {
-            text-align: left; /* Выравнивание текста футера слева */
-            padding: 10px 20px; /* Уменьшение отступа сверху и снизу */
-        }
-        #logo {
-            border-radius: 20px;
-            width: 50px;
-            height: 50px;
-        }
-
-        #nav-right {
-            background-color: #007bff; /* Синий цвет */
-            border-radius: 5px;
-        }
-
-        #empty-table, #links-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        #empty-table th, #links-table th, #empty-table td, #links-table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        #empty-table th, #links-table th {
-            background-color: #f0f0f0;
-            text-align: left;
-        }
-         #empty-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        #empty-table tr:nth-child(odd) {
-            background-color: #e6f7ff; /* Светло-голубой для нечетных строк */
-        }
-
-        @media (min-width: 768px) {
-            .table-container {
-                margin-top: 20px; /* Отступ для компьютерной версии */
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            #empty-table {
-                margin-top: 20px; /* Отступ для мобильной версии */
-            }
-        }
+#header, #footer {
+  background-color: #666;
+    color: #fff;
+}
+#table {
+  border: solid black;
+}
+.space {
+  background-color: white;
+  height: 15px;
+}
