@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор стоимости заказа</title>
+  <style>
+    /* Основные стили страницы */
+    body {
+      background-image: url('https://media.istockphoto.com/id/589415708/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5-%D1%84%D1%80%D1%83%D0%BA%D1%82%D1%8B-%D0%B8-%D0%BE%D0%B2%D0%BE%D1%89%D0%B8.jpg?s=612x612&w=0&k=20&c=AqKy-fSiJwYynKlGD6uh4kMSq4pi6euD5A6tWsc4Kwk='); /* Новый фон */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    /* Обертка для калькулятора */
+    .calculator {
+      background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для калькулятора */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 500px; /* Увеличено окно калькулятора */
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label, input, button {
+      font-size: 18px;
+      margin: 10px 0;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Стили для контейнера картинок */
+    .product-images {
+      display: grid; /* Используем grid для равномерного распределения картинок */
+      grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .product-image:hover {
+      transform: scale(1.1);
+    }
+
+    .product-item {
+      text-align: center;
+    }
+
+    .selected {
+      border: 3px solid #4CAF50;
+    }
+
+    .product-name {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .product-price {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #ff9800;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h1>Калькулятор стоимости заказа</h1>
+
+    <!-- Ввод количества товара -->
+    <label for="quantity">Количество товара:</label>
+    <input type="number" id="quantity" min="1" value="1">
+
+    <!-- Выбор товара с картинками -->
+    <label for="product">Выберите товар:</label>
+    <div class="product-images">
+      <!-- Яблоко -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE0eKm4zBsGOX6yUWufZr7ft2HEYCV8Wa8rA&s" alt="Яблоко" class="product-image" id="apple" data-price="100" onclick="selectProduct('apple', 100)">
+        <div class="product-name">Яблоко</div>
+        <div class="product-price">100 руб/кг</div>
+      </div>
+
+      <!-- Банан -->
+      <div class="product-item">
+        <img src="https://calorizator.ru/sites/default/files/imagecache/product_512/product/banana.jpg" alt="Банан" class="product-image" id="banana" data-price="80" onclick="selectProduct('banana', 80)">
+        <div class="product-name">Банан</div>
+        <div class="product-price">80 руб/кг</div>
+      </div>
+
+      <!-- Морковь -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHaQjruXM_ZUzO-d465ehpy5Ws1YDNB2JVMA&s" alt="Морковь" class="product-image" id="carrot" data-price="50" onclick="selectProduct('carrot', 50)">
+        <div class="product-name">Морковь</div>
+        <div class="product-price">50 руб/кг</div>
+      </div>
+
+      <!-- Апельсин -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHePIe0HcJfnuXHoct2eH9_qwdKU9cWli4g&s" alt="Апельсин" class="product-image" id="orange" data-price="120" onclick="selectProduct('orange', 120)">
+        <div class="product-name">Апельсин</div>
+        <div class="product-price">120 руб/кг</div>
+      </div>
+
+      <!-- Клубника -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7MkS69YtTiozomE2DW2gv25xyWjaFB9zFA&s" alt="Клубника" class="product-image" id="strawberry" data-price="200" onclick="selectProduct('strawberry', 200)">
+        <div class="product-name">Клубника</div>
+        <div class="product-price">200 руб/кг</div>
+      </div>
+
+      <!-- Виноград -->
+      <div class="product-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/1200px-Table_grapes_on_white.jpg" alt="Виноград" class="product-image" id="grape" data-price="150" onclick="selectProduct('grape', 150)">
+        <div class="product-name">Виноград</div>
+        <div class="product-price">150 руб/кг</div>
+      </div>
+    </div>
+
+    <button onclick="calculatePrice()">Подсчитать стоимость</button>
+    <div class="button-container">
+      <button onclick="resetCalculator()">Сбросить</button>
+    </div>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    let selectedProduct = '';
+    let productPrice = 0;
+    function selectProduct(productId, price) {
+          const images = document.querySelectorAll('.product-image');
+          images.forEach(img => img.classList.remove('selected'));
+          const selectedImg = document.getElementById(productId);
+          selectedImg.classList.add('selected');
+          selectedProduct = productId;
+          productPrice = price;
+    }
+
+
+    function calculatePrice() {
+          if (!selectedProduct) {
+            alert('Пожалуйста, выберите товар!');
+            return;
+            }
+          const quantity = document.getElementById('quantity').value;
+          const totalPrice = productPrice * quantity;
+          document.getElementById('result').textContent = `Стоимость заказа: ${totalPrice} руб`;
+    }
+
+    function resetCalculator() {
+          selectedProduct = '';
+          productPrice = 0;
+          const images = document.querySelectorAll('.product-image');
+          images.forEach(img => img.classList.remove('selected'));
+          document.getElementById('quantity').value = 1;
+          document.getElementById('result').textContent = '';
+    }
+  </script>
+
+</body>
+</html>
+
