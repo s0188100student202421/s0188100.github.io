@@ -118,7 +118,7 @@
     <input type="number" id="quantity" min="1" value="1">
 
     <!-- Выбор товара с картинками -->
-    <label for="product">Выберите товар:</label>
+        <label for="product">Выберите товар:</label>
     <div class="product-images">
       <!-- Яблоко -->
       <div class="product-item">
@@ -163,46 +163,85 @@
       </div>
     </div>
 
-    <button onclick="calculatePrice()">Подсчитать стоимость</button>
+    <!-- Кнопка для подсчета стоимости -->
+    <button id="calculate-btn">Подсчитать стоимость</button>
+
+    <!-- Кнопка для сброса -->
     <div class="button-container">
-      <button onclick="resetCalculator()">Сбросить</button>
+      <button id="reset-btn">Сбросить</button>
     </div>
+
+    <!-- Место для вывода результата -->
     <div id="result" class="result"></div>
   </div>
 
   <script>
     let selectedProduct = '';
     let productPrice = 0;
-    function selectProduct(productId, price) {
-          const images = document.querySelectorAll('.product-image');
-          images.forEach(img => img.classList.remove('selected'));
-          const selectedImg = document.getElementById(productId);
-          selectedImg.classList.add('selected');
-          selectedProduct = productId;
-          productPrice = price;
+
+    // Функция для выбора товара
+    function selectProduct(event) {
+      const selectedImg = event.target;
+
+      if (selectedImg.classList.contains('product-image')) {
+        // Убираем выделение с предыдущего товара
+        const images = document.querySelectorAll('.product-image');
+        images.forEach(img => img.classList.remove('selected'));
+
+        // Добавляем выделение на выбранный товар
+        selectedImg.classList.add('selected');
+
+        // Сохраняем выбранный товар и его цену
+        selectedProduct = selectedImg.id;
+        productPrice = parseFloat(selectedImg.getAttribute('data-price'));
+      }
     }
 
-
+    // Функция для подсчета стоимости
     function calculatePrice() {
-          if (!selectedProduct) {
-            alert('Пожалуйста, выберите товар!');
-            return;
-            }
-          const quantity = document.getElementById('quantity').value;
-          const totalPrice = productPrice * quantity;
-          document.getElementById('result').textContent = `Стоимость заказа: ${totalPrice} руб`;
+      if (!selectedProduct) {
+        alert('Пожалуйста, выберите товар!');
+        return;
+      }
+
+      // Получаем количество товара
+      const quantity = document.getElementById('quantity').value;
+
+      // Проверяем, является ли введенное значение числом, больше нуля
+      if (quantity === '' || isNaN(quantity) || quantity <= 0) {
+        alert('Пожалуйста, введите корректное количество (больше нуля).');
+        return;
+      }
+
+      // Рассчитываем стоимость
+      const totalPrice = productPrice * quantity;
+
+      // Выводим результат
+      document.getElementById('result').textContent = `Стоимость заказа: ${totalPrice} руб`;
     }
 
+    // Функция для сброса калькулятора
     function resetCalculator() {
-          selectedProduct = '';
-          productPrice = 0;
-          const images = document.querySelectorAll('.product-image');
-          images.forEach(img => img.classList.remove('selected'));
-          document.getElementById('quantity').value = 1;
-          document.getElementById('result').textContent = '';
+      // Очищаем выбор товара
+      selectedProduct = '';
+      productPrice = 0;
+
+      // Убираем выделение с изображений
+      const images = document.querySelectorAll('.product-image');
+      images.forEach(img => img.classList.remove('selected'));
+
+      // Очищаем поле ввода количества
+      document.getElementById('quantity').value = 1;
+
+      // Очищаем результат
+      document.getElementById('result').textContent = '';
     }
+
+    // Добавляем обработчики событий
+    document.querySelector('.product-images').addEventListener('click', selectProduct);
+    document.getElementById('calculate-btn').addEventListener('click', calculatePrice);
+    document.getElementById('reset-btn').addEventListener('click', resetCalculator);
   </script>
 
 </body>
 </html>
-
