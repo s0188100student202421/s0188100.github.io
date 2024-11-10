@@ -6,3 +6,4 @@
 * [Задание 4](./FourthTask)
 * [Задание 5](./FifthTask)
 * [Задание 6](./SixthTask)
+* [Задание 7](./SeventhTask)
