@@ -104,12 +104,8 @@
 
   <div class="calculator">
     <h1>Калькулятор стоимости заказа</h1>
-
-    <!-- Ввод количества товара -->
     <label for="quantity">Количество товара:</label>
     <input type="number" id="quantity" min="1" value="1">
-
-    <!-- Выбор типа услуги (с надписями слева от радиокнопок) -->
     <label for="service-type">Тип услуги:</label>
     <div class="service-type-container">
       <label for="service-type-1">Самовывоз</label>
@@ -119,8 +115,6 @@
       <label for="service-type-3">Покупка оптом</label>
       <input type="radio" name="service-type" id="service-type-3" value="3">
     </div>
-
-    <!-- Выбор товара с картинками -->
     <label for="product">Выберите товар:</label>
     <div class="product-images">
       <div class="product-item">
@@ -138,7 +132,6 @@
         <div class="product-name">Морковь</div>
         <div class="product-price">50 руб/кг</div>
       </div>
-      <!-- Добавлены новые товары: Апельсин, Клубника, Виноград -->
       <div class="product-item">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHePIe0HcJfnuXHoct2eH9_qwdKU9cWli4g&s" alt="Апельсин" class="product-image" id="orange" data-price="120" onclick="selectProduct('orange', 120)">
         <div class="product-name">Апельсин</div>
@@ -155,8 +148,6 @@
         <div class="product-price">150 руб/кг</div>
       </div>
     </div>
-
-    <!-- Динамические опции и свойства товара -->
     <div class="options-container">
       <label for="product-options">Выберите опцию:</label>
       <select id="product-options">
@@ -168,8 +159,6 @@
     <div class="property-container">
       <label><input type="checkbox" id="product-property" value="10"> Доставка нашей курьерской службой</label>
     </div>
-
-    <!-- Место для вывода результата -->
     <div id="result" class="result"></div>
   </div>
 
@@ -180,27 +169,21 @@
     let selectedOptionPrice = 0;
     let selectedPropertyPrice = 0;
 
-    // Функция для выбора товара
     function selectProduct(productId, price) {
-      // Убираем выделение с предыдущего товара
       const images = document.querySelectorAll('.product-image');
       images.forEach(img => img.classList.remove('selected'));
-
-      // Добавляем выделение на выбранный товар
       const selectedImg = document.getElementById(productId);
       selectedImg.classList.add('selected');
 
       selectedProduct = productId;
       productPrice = price;
-      updatePrice();  // Обновляем цену каждый раз при выборе товара
+      updatePrice();
     }
 
-    // Функция для обновления опций и свойств в зависимости от типа услуги
     function updateOptionsAndProperties() {
       const optionsContainer = document.querySelector('.options-container');
       const propertyContainer = document.querySelector('.property-container');
-      
-      // Скрываем или показываем опции и свойства в зависимости от типа услуги
+
       if (serviceType === 1) {
         optionsContainer.style.display = 'none';
         propertyContainer.style.display = 'none';
@@ -213,18 +196,14 @@
       }
     }
 
-    // Функция для обновления стоимости
     function updatePrice() {
       const quantity = document.getElementById('quantity').value;
       let totalPrice = (productPrice + selectedOptionPrice + selectedPropertyPrice) * quantity;
-
-      // Проверка для типа услуги 3 (сколько товара должно быть не менее 30, скидка 20%)
       if (serviceType === 3 && quantity < 30) {
         alert('Для типа услуги 3 количество товара должно быть не менее 30 штук!');
         return;
       }
 
-      // Если количество >= 30 и тип услуги 3, применяем скидку 20%
       if (serviceType === 3 && quantity >= 30) {
         const discountPrice = totalPrice * 0.8;  // 20% скидка
         document.getElementById('result').innerHTML = `
@@ -236,7 +215,6 @@
       }
     }
 
-    // Обработчик нажатия на радиокнопки типа услуги
     document.querySelectorAll('input[name="service-type"]').forEach(radio => {
       radio.addEventListener('change', function () {
         serviceType = parseInt(this.value);
@@ -245,22 +223,18 @@
       });
     });
 
-    // Обработчик изменения выбранной опции
     document.getElementById('product-options').addEventListener('change', function () {
       selectedOptionPrice = parseInt(this.value);
       updatePrice();  // Обновляем цену при выборе опции
     });
 
-    // Обработчик изменения свойства товара
     document.getElementById('product-property').addEventListener('change', function () {
       selectedPropertyPrice = this.checked ? 15 : 0;
       updatePrice();  // Обновляем цену при изменении свойства
     });
 
-    // Инициализация
     updateOptionsAndProperties();
   </script>
 
 </body>
 </html>
-
