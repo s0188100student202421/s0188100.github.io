@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор стоимости заказа</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calculator">
+    <h1>Калькулятор стоимости заказа</h1>
+
+    <!-- Ввод количества товара -->
+    <label for="quantity">Количество товара:</label>
+    <input type="number" id="quantity" min="1" value="1">
+
+    <!-- Выбор товара с картинками -->
+        <label for="product">Выберите товар:</label>
+    <div class="product-images">
+      <!-- Яблоко -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE0eKm4zBsGOX6yUWufZr7ft2HEYCV8Wa8rA&s" alt="Яблоко" class="product-image" id="apple" data-price="100" onclick="selectProduct('apple', 100)">
+        <div class="product-name">Яблоко</div>
+        <div class="product-price">100 руб/кг</div>
+      </div>
+
+      <!-- Банан -->
+      <div class="product-item">
+        <img src="https://calorizator.ru/sites/default/files/imagecache/product_512/product/banana.jpg" alt="Банан" class="product-image" id="banana" data-price="80" onclick="selectProduct('banana', 80)">
+        <div class="product-name">Банан</div>
+        <div class="product-price">80 руб/кг</div>
+      </div>
+
+      <!-- Морковь -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHaQjruXM_ZUzO-d465ehpy5Ws1YDNB2JVMA&s" alt="Морковь" class="product-image" id="carrot" data-price="50" onclick="selectProduct('carrot', 50)">
+        <div class="product-name">Морковь</div>
+        <div class="product-price">50 руб/кг</div>
+      </div>
+
+      <!-- Апельсин -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHePIe0HcJfnuXHoct2eH9_qwdKU9cWli4g&s" alt="Апельсин" class="product-image" id="orange" data-price="120" onclick="selectProduct('orange', 120)">
+        <div class="product-name">Апельсин</div>
+        <div class="product-price">120 руб/кг</div>
+      </div>
+
+      <!-- Клубника -->
+      <div class="product-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD7MkS69YtTiozomE2DW2gv25xyWjaFB9zFA&s" alt="Клубника" class="product-image" id="strawberry" data-price="200" onclick="selectProduct('strawberry', 200)">
+        <div class="product-name">Клубника</div>
+        <div class="product-price">200 руб/кг</div>
+      </div>
+
+      <!-- Виноград -->
+      <div class="product-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/1200px-Table_grapes_on_white.jpg" alt="Виноград" class="product-image" id="grape" data-price="150" onclick="selectProduct('grape', 150)">
+        <div class="product-name">Виноград</div>
+        <div class="product-price">150 руб/кг</div>
+      </div>
+    </div>
+
+    <!-- Кнопка для подсчета стоимости -->
+    <button id="calculate-btn">Подсчитать стоимость</button>
+
+    <!-- Кнопка для сброса -->
+    <div class="button-container">
+      <button id="reset-btn">Сбросить</button>
+    </div>
+
+    <!-- Место для вывода результата -->
+    <div id="result" class="result"></div>
+  </div>
+  <script src="calc.js"></script>
+</body>
+</html>
+
