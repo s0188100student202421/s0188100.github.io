@@ -1,0 +1,93 @@
+body {
+      background-image: url('https://media.istockphoto.com/id/589415708/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5-%D1%84%D1%80%D1%83%D0%BA%D1%82%D1%8B-%D0%B8-%D0%BE%D0%B2%D0%BE%D1%89%D0%B8.jpg?s=612x612&w=0&k=20&c=AqKy-fSiJwYynKlGD6uh4kMSq4pi6euD5A6tWsc4Kwk='); 
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .calculator {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label, input, button, select {
+      font-size: 18px;
+      margin: 10px 0;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .product-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .product-image:hover {
+      transform: scale(1.1);
+    }
+
+    .product-item {
+      text-align: center;
+    }
+
+    .selected {
+      border: 3px solid orange;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .options-container, .property-container {
+      display: none;
+    }
+
+    .service-type-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .service-type-container label {
+      margin-right: 10px;
+    }
+
+    .service-type-container input {
+      margin-left: 5px;
+    }
+

@@ -4,101 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор стоимости заказа</title>
-  <style>
-    body {
-      background-image: url('https://media.istockphoto.com/id/589415708/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%81%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5-%D1%84%D1%80%D1%83%D0%BA%D1%82%D1%8B-%D0%B8-%D0%BE%D0%B2%D0%BE%D1%89%D0%B8.jpg?s=612x612&w=0&k=20&c=AqKy-fSiJwYynKlGD6uh4kMSq4pi6euD5A6tWsc4Kwk='); 
-      background-size: cover;
-      background-position: center;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #fff;
-    }
-
-    .calculator {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      width: 600px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    label, input, button, select {
-      font-size: 18px;
-      margin: 10px 0;
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .result {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .product-images {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin: 20px 0;
-    }
-
-    .product-image {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s, border 0.3s;
-    }
-
-    .product-image:hover {
-      transform: scale(1.1);
-    }
-
-    .product-item {
-      text-align: center;
-    }
-
-    .selected {
-      border: 3px solid orange;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .options-container, .property-container {
-      display: none;
-    }
-
-    .service-type-container {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    .service-type-container label {
-      margin-right: 10px;
-    }
-
-    .service-type-container input {
-      margin-left: 5px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -162,79 +68,10 @@
     <div id="result" class="result"></div>
   </div>
 
-  <script>
-    let selectedProduct = '';
-    let productPrice = 0;
-    let serviceType = 1;
-    let selectedOptionPrice = 0;
-    let selectedPropertyPrice = 0;
 
-    function selectProduct(productId, price) {
-      const images = document.querySelectorAll('.product-image');
-      images.forEach(img => img.classList.remove('selected'));
-      const selectedImg = document.getElementById(productId);
-      selectedImg.classList.add('selected');
+    <script src="calc.js"></script>
 
-      selectedProduct = productId;
-      productPrice = price;
-      updatePrice();
-    }
-
-    function updateOptionsAndProperties() {
-      const optionsContainer = document.querySelector('.options-container');
-      const propertyContainer = document.querySelector('.property-container');
-
-      if (serviceType === 1) {
-        optionsContainer.style.display = 'none';
-        propertyContainer.style.display = 'none';
-      } else if (serviceType === 2) {
-        optionsContainer.style.display = 'block';
-        propertyContainer.style.display = 'none';
-      } else if (serviceType === 3) {
-        optionsContainer.style.display = 'none';
-        propertyContainer.style.display = 'block';
-      }
-    }
-
-    function updatePrice() {
-      const quantity = document.getElementById('quantity').value;
-      let totalPrice = (productPrice + selectedOptionPrice + selectedPropertyPrice) * quantity;
-      if (serviceType === 3 && quantity < 30) {
-        alert('Для типа услуги 3 количество товара должно быть не менее 30 штук!');
-        return;
-      }
-
-      if (serviceType === 3 && quantity >= 30) {
-        const discountPrice = totalPrice * 0.8;  // 20% скидка
-        document.getElementById('result').innerHTML = `
-          Общая стоимость: ${totalPrice} руб.<br>
-          Стоимость со скидкой (20%): ${discountPrice.toFixed(2)} руб.
-        `;
-      } else {
-        document.getElementById('result').textContent = `Общая стоимость: ${totalPrice} руб.`;
-      }
-    }
-
-    document.querySelectorAll('input[name="service-type"]').forEach(radio => {
-      radio.addEventListener('change', function () {
-        serviceType = parseInt(this.value);
-        updateOptionsAndProperties();
-        updatePrice();  // Пересчитываем цену при изменении типа услуги
-      });
-    });
-
-    document.getElementById('product-options').addEventListener('change', function () {
-      selectedOptionPrice = parseInt(this.value);
-      updatePrice();  // Обновляем цену при выборе опции
-    });
-
-    document.getElementById('product-property').addEventListener('change', function () {
-      selectedPropertyPrice = this.checked ? 15 : 0;
-      updatePrice();  // Обновляем цену при изменении свойства
-    });
-
-    updateOptionsAndProperties();
-  </script>
 
 </body>
 </html>
+
