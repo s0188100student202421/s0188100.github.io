@@ -1,4 +1,6 @@
-let selectedProduct = '';
+window.addEventListener('DOMContentLoaded', function (event) {
+  console.log("DOM fully loaded and parsed");
+    let selectedProduct = '';
     let productPrice = 0;
 
     // Функция для выбора товара
@@ -62,3 +64,4 @@ let selectedProduct = '';
     document.querySelector('.product-images').addEventListener('click', selectProduct);
     document.getElementById('calculate-btn').addEventListener('click', calculatePrice);
     document.getElementById('reset-btn').addEventListener('click', resetCalculator);
+});
