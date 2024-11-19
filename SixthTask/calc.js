@@ -1,4 +1,6 @@
-let selectedProduct = '';
+window.addEventListener('DOMContentLoaded', function (event) {
+  console.log("DOM fully loaded and parsed");
+    let selectedProduct = '';
     let productPrice = 0;
     let serviceType = 1;
     let selectedOptionPrice = 0;
@@ -69,3 +71,4 @@ let selectedProduct = '';
     });
 
     updateOptionsAndProperties();
+});
