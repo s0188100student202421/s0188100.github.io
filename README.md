@@ -8,3 +8,4 @@
 * [Задание 6](./SixthTask)
 * [Задание 7](./SeventhTask)
 * [Задание 8](./EighthTask)
+* Проект(./Project)
