@@ -1,0 +1,115 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://media.istockphoto.com/id/517188688/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B3%D0%BE%D1%80%D0%BD%D1%8B%D0%B9-%D0%BB%D0%B0%D0%BD%D0%B4%D1%88%D0%B0%D1%84%D1%82.jpg?s=612x612&w=0&k=20&c=6Qfb5YCLIkiq_hYxRmTj8t2FWwr4Yrdq2CRGVwj5Ymk=') no-repeat center center fixed;
+  background-size: cover; /* Изображение будет покрывать весь экран */
+}
+
+/* Кнопка открытия формы */
+#openFormBtn {
+  width: 200px;
+  height: 50px;
+  background-color:#90ee90; /* Синий цвет кнопки */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#openFormBtn:hover {
+  background-color: #76e076;
+}
+
+/* Попап с формой */
+#feedbackPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px; /* Ограничиваем максимальную ширину попапа */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Располагаем элементы сверху вниз */
+  align-items: stretch; /* Элементы растягиваются по ширине контейнера */
+  box-sizing: border-box;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px; /* Стандартный размер кнопки */
+  background-color: #90ee90; /* Светло-зеленый цвет */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+  align-self: center; /* Центрируем кнопку */
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #76e076; /* Более темный зеленый при наведении */
+}
+
+#formMessage {
+  margin-top: 15px;
+  color: red;
+  text-align: center;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
