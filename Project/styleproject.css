@@ -85,20 +85,21 @@
   display: block;
 }
 
+/*Header*/
+
 .content-flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-
 .header_box {
   line-height: 1;
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
   max-width: 50%; 
- 
+  margin-left: 70px;
 }
 .header_box > div {
   margin-bottom: 20px; 
@@ -106,6 +107,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start; 
+}
+.header {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 .header {
   font-size: 14px;
@@ -122,20 +129,10 @@
   z-index: 1;
 }
 
-.header_title {
-  flex: 1; 
-  max-width: 50%; 
-  text-align: left; 
-  padding: 20px; 
-}
-
 .ptitle {
   font-weight: 700;
-  font-size: 62px;
+  font-size: 60px;
   color: #fff;
-  line-height: 57px; 
-  margin: 0; 
-  text-align: left;
 }
 .ptext {
   font-size: 20px;
@@ -150,6 +147,7 @@
   justify-content: space-between; 
   max-width: 50%; 
   gap: 15px;
+ margin-left:100px;
 }
 
 .header_box > div {
@@ -164,37 +162,33 @@
   text-align: left; 
   flex: 1 1 calc(33.33% - 15px); 
   margin: 10px 0; 
-  box-sizing: border-box;
-}
-.headbl {
-  font-size: 30px; 
-  font-weight: bold; 
-  color: #f14d34; 
-  margin: 0; 
-  padding: 5px;
-  margin-top: -10px; 
-  color: #fff; 
-  text-align: left; 
-  width: 100%; 
+  box-sizing: border-box; 
 }
 .header_block_text {
   font-size: 50px !important;
-  margin-top: -50px;
 }
 .header_block_text:after {
   content: url(img/cup.png);
   position: relative;
+  right: 0;
+  top: 0;
 }
-
+.headbl {
+  font-size: 24px;
+  font-weight: bold;
+}
 .headbltext {
   font-size: 12px;
   color: #fff;
-  text-align: left;
-  margin-top: 5px;
+  opacity: 0.7;
 }
-
 .header h4 {
   font-weight: 200;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    position: center;
 }
 .header_button {
   display: block;
@@ -206,7 +200,6 @@
   font-size: 15px;
   border-radius: 2px;
   border-color: rgba(250, 68, 7, 0.893);
-  margin: auto;
 }
 .header_button:hover {
   color: #fff;
@@ -297,6 +290,7 @@ source {
 .rub {
   font-size: 20px;
 }
+
 h2 {
   font-weight: 700;
 }
@@ -471,7 +465,7 @@ nav ul {
 nav li {
   list-style-type: none;
   border-top: 1px #333 solid;
-  padding: 0px;
+  padding: 9px 20px;
   padding-right: 0;
   opacity: 0.8;
 }
@@ -490,10 +484,12 @@ nav li {
 }
 .menu_podcat > ul {
   margin-left: -20px;
-  width: 100%;
+  width: calc(100% + 20px);
   margin-top: 8px;
 }
-
+.menu_podcat > ul li {
+  padding-left: 40px;
+}
 .menu {
   border-bottom: 1px #fff solid;
   max-height: calc(100vh - 35px);
@@ -528,7 +524,7 @@ nav li {
 }
 
 .boxred {
-  justify-content: center;
+  margin: 10px;
   display: inline-flex;
   flex-direction: column;
   border-left: 3px #f14d34 solid;
@@ -537,9 +533,14 @@ nav li {
   padding-bottom: 3px;
   color: #ffffffc9;
 }
+
 .boxred p span.highlight-text {
   color: #f14d34; /* Задаём только цвет */
 }
+.menu li span.highlight-text {
+  color: #f14d34; /* Задаём только цвет */
+}
+
 .text-laptop {
   margin-top: 200px;
   color: #fff;
@@ -562,15 +563,8 @@ nav li {
 .ffw > div:nth-child(2) {
   width: 50%;
 }
-.dd1 {
-  position: relative;
-  display: inline-block;
-}
-.dd1 img:not(.dd) {
-  position: absolute;
-  right: -25px;
-  top: -20px;
-}
+
+
 
 /*Картинки flex*/
 .butpic {
@@ -853,7 +847,7 @@ nav li {
   content: url(img/phone.svg);
   padding-left: 40px;
   position: absolute;
-  left: 90px;
+  left: -40px;
   top: 0;
   width: 24px;
 }
@@ -861,7 +855,7 @@ nav li {
   content: url(img/mail.svg);
   padding-left: 40px;
   position: absolute;
-  left: 90px;
+  left: -40px;
   top: 0;
   width: 28px;
 }
@@ -997,6 +991,9 @@ nav li {
   color: #fff;
 }
 @media (max-width: 600px) {
+   .header_box{
+        margin-left:70px;
+    }
   .ffw {
     flex-direction: column-reverse;
   }
@@ -1005,7 +1002,25 @@ nav li {
     margin-left: 20px;
   }
 }
+
 @media (max-width: 650px) {
+    .ptitle {
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+       text-align:center;
+    }
+    .ptext {
+        display: flex;
+      justify-content: center;
+       text-align:center;
+    }
+    .header_box > div{
+        flex: 1 1 calc(33.33% - 5px); 
+    }
+    .header_box{
+        margin-left:150px;
+    }
   .mobile_head_menu {
     display: block;
   }
@@ -1027,6 +1042,14 @@ nav li {
   }
 }
 @media (min-width: 768px) {
+    
+   .button-container {
+    display: block;
+    margin: 0 ;
+    }
+    .header_box > div{
+        flex: 1 1 calc(33.33% - 15px); 
+    }
   .text-content {
     display: flex;
     flex-direction: row;
